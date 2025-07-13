@@ -1,9 +1,11 @@
+import withNetlify from '@netlify/next';
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
-const withNetlify = require('@netlify/next');
-
-module.exports = withNetlify({
+const nextConfig = {
   reactStrictMode: true,
-});
+  images: {
+    domains: ["your-image-domain.com"], // Optional: if you're loading remote images
+  },
+};
+
+export default withNetlify(nextConfig);
